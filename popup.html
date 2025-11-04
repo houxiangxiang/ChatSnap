@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChatSnap</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>ChatSnap</h2>
+        <div id="spinner" style="display:none;">
+            <div class="loader"></div>
+            <p>Working on response...</p>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="response-box">
+            <div id="ai-response">
+                <p>Your AI-generated response will appear here...</p>
+            </div>
+        </div>
+
+        <div class="query-box">
+            <textarea id="user-input" placeholder="Ask something..."></textarea>
+            <div class="query-controls">
+                <label>
+                    <input type="checkbox" id="condense-checkbox" checked>
+                    Condense
+                </label>
+                <button id="clickme">Chat</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

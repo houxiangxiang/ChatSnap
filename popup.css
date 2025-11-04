@@ -1,0 +1,180 @@
+/* popup.css */
+
+/* 整体样式 */
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* 标题 */
+h2 {
+    text-align: center;
+    margin: 10px 0;
+    color: #0078d7;
+}
+
+/* 主容器 */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* 回复区 */
+.response-box {
+    flex: 7;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    overflow-y: auto;
+
+    max-height: 300px; /* 你想限制的最大高度，可以按需要调整 */
+    overflow-y: auto;  /* 内容超出时显示滚动条 */
+}
+
+#ai-response p {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #444;
+    overflow-y: auto;
+}
+
+/* 输入区（竖向布局） */
+.query-box {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    gap: 10px;
+}
+
+/* 输入框独占整行 */
+#user-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: none; /* 防止拉伸 */
+    outline: none;
+}
+
+#user-input:focus {
+    border-color: #0078d7;
+}
+
+
+
+
+.query-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 让 checkbox 和文字贴合，显得紧凑 */
+.query-controls label {
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 优化按钮外观，防止挤压 */
+.query-controls button {
+    flex-shrink: 0;
+}
+
+
+/* 按钮置于下方居中 */
+button#clickme {
+    align-self: center;
+    width: 50%;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button#clickme:hover {
+    background-color: #005fa3;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 顶部标题 + 加载区 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 居中整个区域 */
+    gap: 10px; /* 标题和spinner的间距 */
+    margin-top: 8px;
+}
+
+/* 标题 */
+h2 {
+    margin: 0;
+    color: #0078d7;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* spinner整体 */
+#spinner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-align: left;
+    padding: 0;
+}
+
+/* 微调文字提示，使其轻盈不抢眼 */
+#spinner p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+}
+
+/* 精致小巧的loading动画 */
+.loader {
+    border: 3px solid #e0e0e0;
+    border-top: 3px solid #0078d7;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
